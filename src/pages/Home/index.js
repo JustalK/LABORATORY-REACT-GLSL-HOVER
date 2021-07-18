@@ -5,7 +5,7 @@
 import React, { useRef, useState } from 'react'
 import { useLoader, useFrame } from '@react-three/fiber'
 import * as THREE from 'three'
-import '@components/Materials/Smoke'
+import Selector from './Selector'
 
 /**
  * @function Home
@@ -17,6 +17,7 @@ export default function Home() {
   const ref = useRef()
   const [hover, setHover] = useState(false)
   const [tDiffuse] = useLoader(THREE.TextureLoader, ['./1.jpeg'])
+  const [selection, setSelection] = useState(0)
 
   useFrame((state, delta) => {
     ref.current.uTime += delta
@@ -35,9 +36,10 @@ export default function Home() {
         onPointerMove={(e) => {
           ref.current.uMouse = e.intersections[0].uv
         }}
+        onClick={() => setSelection((c) => c + 1)}
       >
         <planeGeometry args={[1, 1, 32, 32]} />
-        <imageMaterial ref={ref} tDiffuse={tDiffuse} />
+        <Selector selection={selection} ref={ref} tDiffuse={tDiffuse} />
       </mesh>
     </>
   )
