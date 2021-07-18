@@ -1,0 +1,68 @@
+{
+  "name": "my-app",
+  "version": "0.1.0",
+  "description": "Kevin Justal's Project",
+  "private": true,
+  "engines": {
+    "node": ">=16.0"
+  },
+  "dependencies": {
+    "@react-three/drei": "^7.1.2",
+    "@react-three/fiber": "^7.0.5",
+    "@testing-library/jest-dom": "^5.11.4",
+    "@testing-library/react": "^11.1.0",
+    "@testing-library/user-event": "^12.1.10",
+    "customize-cra": "^1.0.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-helmet": "^6.1.0",
+    "react-router-dom": "^5.2.0",
+    "react-scripts": "4.0.3",
+    "three": "^0.130.1",
+    "web-vitals": "^1.0.1",
+    "wouter": "^2.7.4"
+  },
+  "scripts": {
+    "start": "npm run linter:fix && react-app-rewired start",
+    "build": "react-app-rewired build",
+    "test": "react-app-rewired test",
+    "eject": "react-scripts eject",
+    "linter:fix": "eslint --fix ./src",
+    "build:docs": "npx jsdoc -r ./src ./README.md",
+    "check-update": "npm outdated --depth=0"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@babel/eslint-parser": "^7.14.7",
+    "eslint": "^7.30.0",
+    "eslint-config-airbnb": "^18.2.1",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-import-resolver-alias": "^1.1.2",
+    "eslint-plugin-import": "^2.23.4",
+    "eslint-plugin-prettier": "^3.4.0",
+    "eslint-plugin-react": "^7.24.0",
+    "jsdoc": "^3.6.7",
+    "lint-staged": "^11.0.0",
+    "prettier": "^2.3.2",
+    "react-app-rewired": "^2.1.8",
+    "sass": "^1.35.1"
+  }
+}
