@@ -1,26 +1,28 @@
-![Alt text](documentation/video.gif?raw=true "REACT-APP-GLSL")
+![Alt text](documentation/video.gif?raw=true "REACT-APP-GLSL-HOVER")
 
-# REACT APP TEMPLATE
+# REACT APP GLSL (HOVER EFFECT)
 
 ## Goal
 
-This project is a template for building React App linked to WebGl with all my favorite tools already configured.
-
-Obviously, the app is using the latest version of `react`. For avoiding the relative path, I modified the webpack and allowing the import with an alias. I also added the support for sass files.
-
-In addition, I added `prettier` and configured it for working well with `esLint`. Finally, I added the basic usefull package such as the router and the helmet.  
-
-For the WebGl part, I am using `React Three Fiber` and `GLSL` for the shader. For a starting point, the project already has 2 pages with few meshes, 1 GLSL transition and a scroll linked to the canvas.
+This project is a laboratory where I create hover effect using `GLSL Shader` and `React Three Fiber`.
 
 ## Plan of the presentation
 
 I explain with all the details how I build the project and my way of working.
 
+- [Experience](#experience)
 - [Documentation](#documentation)
 - [Organization](#organization)
 - [Development](#development)
 - [Running](#running)
 - [Commands](#commands)
+
+## Experience
+
+- **Experience 1**: Pixel offset (Rain Effect)
+- **Experience 2**: Ghost effect on top of an image
+- **Experience 3**: Top to bottom effect with a pixel color offset
+- **Experience 4**: Using a displacement texture for changing image 
 
 ## Documentation
 #### Code documentation
