@@ -10,23 +10,12 @@ import { Canvas } from '@react-three/fiber'
  * @function Scene
  * Create the component Canvas with the raycaster for interactinf with the mesh
  * @param {Object} Children The dom element nested in the component
- * @param {Object} scrollRef The reference to the actual div having the scroll bar
  * @return {Object} Return the dom of the Canvas
  */
-const Scene = ({ children, scrollRef }) => {
+const Scene = ({ children }) => {
   return (
     <div id="canvas-container">
-      <Canvas
-        onCreated={(state) => state.events.connect(scrollRef.current)}
-        raycaster={{
-          computeOffsets: ({ clientX, clientY }) => {
-            return {
-              offsetX: clientX,
-              offsetY: clientY
-            }
-          }
-        }}
-      >
+      <Canvas camera={{ position: [0, 0, 2], fov: 50 }}>
         <Suspense fallback={null}>{children}</Suspense>
       </Canvas>
     </div>

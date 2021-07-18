@@ -2,16 +2,10 @@
  * The module managing the home page
  * @module Home
  */
-import React, { useRef, useEffect } from 'react'
-import Transitions from '@components/Transition'
-import { ROUTE_SECONDARY } from '@constants/routes'
-import Slide1 from './Slides/Slide1'
-import Slide2 from './Slides/Slide2'
-import Slide3 from './Slides/Slide3'
-import Slide4 from './Slides/Slide4'
-
-/* Number of slides of the Home */
-const pageSlides = 4
+import React, { useRef, useState } from 'react'
+import { useLoader, useFrame } from '@react-three/fiber'
+import * as THREE from 'three'
+import '@components/Materials/Smoke'
 
 /**
  * @function Home
@@ -19,29 +13,32 @@ const pageSlides = 4
  * @param {function} loadedPage The function to call once the page is loaded
  * @return {Object} Return the dom of the Home
  */
-export default function Home({ loadedPage }) {
-  const activated = useRef(false)
+export default function Home() {
+  const ref = useRef()
+  const [hover, setHover] = useState(false)
+  const [tDiffuse] = useLoader(THREE.TextureLoader, ['./1.jpeg'])
 
-  const handleOnClick = () => {
-    activated.current = true
-  }
-
-  useEffect(() => {
-    loadedPage(pageSlides)
-  }, [])
+  useFrame((state, delta) => {
+    ref.current.uTime += delta
+    ref.current.uVelo = hover
+      ? Math.min(1.0, ref.current.uVelo + 0.05)
+      : Math.max(0.0, ref.current.uVelo - 0.05)
+  })
 
   return (
     <>
-      <Transitions
-        pageSlides={pageSlides}
-        activated={activated}
-        route={ROUTE_SECONDARY}
-      />
       <ambientLight intensity={0.1} />
-      <Slide1 handleOnClick={handleOnClick} />
-      <Slide2 handleOnClick={handleOnClick} />
-      <Slide3 handleOnClick={handleOnClick} />
-      <Slide4 handleOnClick={handleOnClick} />
+      <mesh
+        position={[0, 0, 0]}
+        onPointerEnter={() => setHover(true)}
+        onPointerLeave={() => setHover(false)}
+        onPointerMove={(e) => {
+          ref.current.uMouse = e.intersections[0].uv
+        }}
+      >
+        <planeGeometry args={[1, 1, 32, 32]} />
+        <imageMaterial ref={ref} tDiffuse={tDiffuse} />
+      </mesh>
     </>
   )
 }
