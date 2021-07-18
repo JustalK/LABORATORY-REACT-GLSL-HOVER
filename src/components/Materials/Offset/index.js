@@ -5,7 +5,7 @@ export default class OffsetMaterial extends THREE.ShaderMaterial {
   constructor() {
     super({
       uniforms: {
-        tDiffuse: { value: undefined },
+        uTexture: { value: undefined },
         resolution: {
           value: new THREE.Vector2(
             window.innerHeight / window.innerWidth,
@@ -32,13 +32,13 @@ export default class OffsetMaterial extends THREE.ShaderMaterial {
         gl_Position = mix(projectionMatrix * modelViewMatrix * vec4(position,1.), projectionMatrix * modelViewMatrix * vec4(pos,1.), 0.5);
       }`,
       fragmentShader: `
-      uniform sampler2D tDiffuse;
+      uniform sampler2D uTexture;
       varying vec2 vUv;
       uniform vec2 uMouse;
       uniform float uTime;
       uniform float uVelo;
       void main()  {
-        gl_FragColor = texture2D(tDiffuse, vUv);
+        gl_FragColor = texture2D(uTexture, vUv);
       }`
     })
   }
@@ -59,12 +59,12 @@ export default class OffsetMaterial extends THREE.ShaderMaterial {
     return (this.uniforms.uTime.value = v)
   }
 
-  get tDiffuse() {
-    return this.uniforms.tDiffuse.value
+  get uTexture() {
+    return this.uniforms.uTexture.value
   }
 
-  set tDiffuse(v) {
-    return (this.uniforms.tDiffuse.value = v)
+  set uTexture(v) {
+    return (this.uniforms.uTexture.value = v)
   }
 
   get uMouse() {

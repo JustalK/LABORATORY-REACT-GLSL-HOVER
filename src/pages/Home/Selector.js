@@ -8,24 +8,24 @@ import * as Selections from './Selections'
 const total = Object.keys(Selections).length
 
 const Selector = forwardRef(
-  ({ selection, tDiffuse, tDiffuse2, tDisplacement }, ref) => {
+  ({ selection, uTexture, uTexture2, uTextureDisplacement }, ref) => {
     return (
       <>
         {selection % total === 0 && (
-          <offsetMaterial ref={ref} tDiffuse={tDiffuse} />
+          <offsetMaterial ref={ref} uTexture={uTexture} />
         )}
         {selection % total === 1 && (
-          <smokeMaterial ref={ref} tDiffuse={tDiffuse} />
+          <smokeMaterial ref={ref} uTexture={uTexture} />
         )}
         {selection % total === 2 && (
-          <topToBottomMaterial ref={ref} tDiffuse={tDiffuse} />
+          <topToBottomMaterial ref={ref} uTexture={uTexture} />
         )}
         {selection % total === 3 && (
           <displacementMaterial
             ref={ref}
-            uTexture1={tDiffuse}
-            uTexture2={tDiffuse2}
-            uTextureDisplacement={tDisplacement}
+            uTexture1={uTexture}
+            uTexture2={uTexture2}
+            uTextureDisplacement={uTextureDisplacement}
           />
         )}
       </>

@@ -33,11 +33,10 @@ export default function Home() {
   const ref = useRef()
   const titleRef = useRef()
   const subtitleRef = useRef()
-  const [tDiffuse, tDiffuse2, tDisplacement] = useLoader(THREE.TextureLoader, [
-    './1.jpeg',
-    './2.jpeg',
-    './displacement/4.png'
-  ])
+  const [uTexture, uTexture2, uTextureDisplacement] = useLoader(
+    THREE.TextureLoader,
+    ['./1.jpeg', './2.jpeg', './displacement/4.png']
+  )
   const [selection, setSelection] = useState(0)
 
   useFrame((state, delta) => {
@@ -109,9 +108,9 @@ export default function Home() {
         <Selector
           selection={selection}
           ref={ref}
-          tDiffuse={tDiffuse}
-          tDiffuse2={tDiffuse2}
-          tDisplacement={tDisplacement}
+          uTexture={uTexture}
+          uTexture2={uTexture2}
+          uTextureDisplacement={uTextureDisplacement}
         />
       </mesh>
     </>

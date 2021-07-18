@@ -5,7 +5,7 @@ export default class TopToBottomMaterial extends THREE.ShaderMaterial {
   constructor() {
     super({
       uniforms: {
-        tDiffuse: { value: undefined },
+        uTexture: { value: undefined },
         resolution: {
           value: new THREE.Vector2(
             window.innerHeight / window.innerWidth,
@@ -28,7 +28,7 @@ export default class TopToBottomMaterial extends THREE.ShaderMaterial {
         gl_Position = projectionMatrix * modelViewMatrix * vec4(pos,1.);
       }`,
       fragmentShader: `
-      uniform sampler2D tDiffuse;
+      uniform sampler2D uTexture;
       uniform vec2 resolution;
       varying vec2 vUv;
       uniform vec2 uMouse;
@@ -43,14 +43,14 @@ export default class TopToBottomMaterial extends THREE.ShaderMaterial {
       void main()  {
           vec2 newUV = vUv;
           float c = circle(vUv, uMouse, 0.1 + (1.0 - uVelo), 0.05);
-          float r = texture2D(tDiffuse, newUV.xy  -= c * (0.1 * .15 * uVelo)).x;
-          float g = texture2D(tDiffuse, newUV.xy).y;
-          float b = texture2D(tDiffuse, newUV.xy  += c * (0.1 * .35 * uVelo)).z;
+          float r = texture2D(uTexture, newUV.xy  -= c * (0.1 * .15 * uVelo)).x;
+          float g = texture2D(uTexture, newUV.xy).y;
+          float b = texture2D(uTexture, newUV.xy  += c * (0.1 * .35 * uVelo)).z;
           vec4 color = vec4(r, g * (1.0 - uVelo), b, 1.);
 
           float finalMask = smoothstep(0.4, 0.5, c);
 
-        	vec4 hover = texture2D(tDiffuse, vUv);
+        	vec4 hover = texture2D(uTexture, vUv);
         	vec2 p = vUv + uVelo * vec2(0.0, 1.0);
           gl_FragColor = mix(color, hover, step(0.0, p.y) * step(p.y, 1.0) * step(0.0, p.x) * step(p.x, 1.0));
       }`
@@ -73,12 +73,12 @@ export default class TopToBottomMaterial extends THREE.ShaderMaterial {
     return (this.uniforms.uTime.value = v)
   }
 
-  get tDiffuse() {
-    return this.uniforms.tDiffuse.value
+  get uTexture() {
+    return this.uniforms.uTexture.value
   }
 
-  set tDiffuse(v) {
-    return (this.uniforms.tDiffuse.value = v)
+  set uTexture(v) {
+    return (this.uniforms.uTexture.value = v)
   }
 
   get uMouse() {

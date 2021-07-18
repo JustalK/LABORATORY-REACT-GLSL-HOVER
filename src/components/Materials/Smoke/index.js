@@ -5,7 +5,7 @@ export default class SmokeMaterial extends THREE.ShaderMaterial {
   constructor() {
     super({
       uniforms: {
-        tDiffuse: { value: undefined },
+        uTexture: { value: undefined },
         resolution: {
           value: new THREE.Vector2(
             window.innerHeight / window.innerWidth,
@@ -28,7 +28,7 @@ export default class SmokeMaterial extends THREE.ShaderMaterial {
         gl_Position = projectionMatrix * modelViewMatrix * vec4(pos,1.);
       }`,
       fragmentShader: `
-      uniform sampler2D tDiffuse;
+      uniform sampler2D uTexture;
       uniform vec2 resolution;
       varying vec2 vUv;
       uniform vec2 uMouse;
@@ -73,7 +73,7 @@ export default class SmokeMaterial extends THREE.ShaderMaterial {
           vec2 nuv = vec2(vUv.x - uTime / 6., vUv.y);
 
           float x = fractalNoise(nuv * 6.);
-          vec4 final = mix(vec4(x, x, x, 0), texture(tDiffuse, vUv), pow(abs(vUv.y), .9));
+          vec4 final = mix(vec4(x, x, x, 0), texture(uTexture, vUv), pow(abs(vUv.y), .9));
 
           gl_FragColor = final;
       }`
@@ -96,12 +96,12 @@ export default class SmokeMaterial extends THREE.ShaderMaterial {
     return (this.uniforms.uTime.value = v)
   }
 
-  get tDiffuse() {
-    return this.uniforms.tDiffuse.value
+  get uTexture() {
+    return this.uniforms.uTexture.value
   }
 
-  set tDiffuse(v) {
-    return (this.uniforms.tDiffuse.value = v)
+  set uTexture(v) {
+    return (this.uniforms.uTexture.value = v)
   }
 
   get uMouse() {
