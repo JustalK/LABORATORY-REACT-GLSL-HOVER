@@ -3,11 +3,11 @@
  * @module Home
  */
 import React, { forwardRef } from 'react'
-import '@components/Materials/Smoke'
-import '@components/Materials/Offset'
+import * as Selections from './Selections'
+
+const total = Object.keys(Selections).length
 
 const Selector = forwardRef(({ selection, tDiffuse }, ref) => {
-  const total = 2
   return (
     <>
       {selection % total === 0 && (
