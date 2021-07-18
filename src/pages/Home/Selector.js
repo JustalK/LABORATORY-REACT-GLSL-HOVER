@@ -16,6 +16,9 @@ const Selector = forwardRef(({ selection, tDiffuse }, ref) => {
       {selection % total === 1 && (
         <smokeMaterial ref={ref} tDiffuse={tDiffuse} />
       )}
+      {selection % total === 2 && (
+        <topToBottomMaterial ref={ref} tDiffuse={tDiffuse} />
+      )}
     </>
   )
 })
