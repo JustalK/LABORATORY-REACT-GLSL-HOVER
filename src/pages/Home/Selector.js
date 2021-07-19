@@ -38,6 +38,9 @@ const Selector = forwardRef(
         {selection % total === 5 && (
           <perlinNoiseMaterial ref={ref} uTexture={uTexture} />
         )}
+        {selection % total === 6 && (
+          <maskMaterial ref={ref} uTexture={uTexture} />
+        )}
       </>
     )
   }

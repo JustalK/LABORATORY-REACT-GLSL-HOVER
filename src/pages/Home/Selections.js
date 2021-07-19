@@ -4,6 +4,7 @@ import topToBottomMaterial from '@components/Materials/TopToBottom'
 import displacementMaterial from '@components/Materials/Displacement'
 import rippleMaterial from '@components/Materials/Ripple'
 import perlinNoiseMaterial from '@components/Materials/PerlinNoise'
+import maskMaterial from '@components/Materials/Mask'
 
 export {
   smokeMaterial,
@@ -11,5 +12,6 @@ export {
   topToBottomMaterial,
   displacementMaterial,
   rippleMaterial,
-  perlinNoiseMaterial
+  perlinNoiseMaterial,
+  maskMaterial
 }

@@ -25,6 +25,7 @@ I explain with all the details how I build the project and my way of working.
 - **Experience 4**: Using a displacement texture for changing image
 - **Experience 5**: Adding a ripple effect using noise and displacement texture
 - **Experience 6**: Adding a perlin noise on the mesh
+- **Experience 7**: Adding a mask on top of an image
 
 ## Documentation
 #### Code documentation
