@@ -35,6 +35,9 @@ const Selector = forwardRef(
             uTextureDisplacement={uTextureDisplacement}
           />
         )}
+        {selection % total === 5 && (
+          <perlinNoiseMaterial ref={ref} uTexture={uTexture} />
+        )}
       </>
     )
   }
