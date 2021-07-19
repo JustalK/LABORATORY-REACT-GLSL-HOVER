@@ -22,7 +22,8 @@ I explain with all the details how I build the project and my way of working.
 - **Experience 1**: Pixel offset (Rain Effect)
 - **Experience 2**: Ghost effect on top of an image
 - **Experience 3**: Top to bottom effect with a pixel color offset
-- **Experience 4**: Using a displacement texture for changing image 
+- **Experience 4**: Using a displacement texture for changing image
+- **Experience 5**: Adding a ripple effect using noise and displacement texture
 
 ## Documentation
 #### Code documentation

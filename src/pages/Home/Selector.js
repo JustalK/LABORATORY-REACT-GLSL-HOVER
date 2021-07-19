@@ -28,6 +28,13 @@ const Selector = forwardRef(
             uTextureDisplacement={uTextureDisplacement}
           />
         )}
+        {selection % total === 4 && (
+          <rippleMaterial
+            ref={ref}
+            uTexture={uTexture}
+            uTextureDisplacement={uTextureDisplacement}
+          />
+        )}
       </>
     )
   }
