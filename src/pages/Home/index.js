@@ -64,7 +64,7 @@ export default function Home() {
       <text
         position={[0, -0.6, 0]}
         fontSize={0.06}
-        text={`Click here for switching experience`}
+        text="Click here for switching experience"
         ref={subtitleRef}
         {...propsText}
         color={subtitleHover ? '#FF0000' : '#99ccff'}
