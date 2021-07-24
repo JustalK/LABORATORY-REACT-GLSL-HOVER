@@ -6,6 +6,7 @@ import rippleMaterial from '@components/Materials/Ripple'
 import perlinNoiseMaterial from '@components/Materials/PerlinNoise'
 import maskMaterial from '@components/Materials/Mask'
 import maskNewImageMaterial from '@components/Materials/MaskNewImage'
+import morphMaterial from '@components/Materials/Morph'
 
 export {
   smokeMaterial,
@@ -15,5 +16,6 @@ export {
   rippleMaterial,
   perlinNoiseMaterial,
   maskMaterial,
-  maskNewImageMaterial
+  maskNewImageMaterial,
+  morphMaterial
 }

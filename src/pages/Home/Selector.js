@@ -48,6 +48,9 @@ const Selector = forwardRef(
             uTexture2={uTexture2}
           />
         )}
+        {selection % total === 8 && (
+          <morphMaterial ref={ref} uTexture={uTexture} uTexture2={uTexture2} />
+        )}
       </>
     )
   }
