@@ -25,7 +25,7 @@
     "wouter": "^2.7.4"
   },
   "scripts": {
-    "start": "react-app-rewired start",
+    "start": "npm install -g serve && serve -s build",
     "dev": "npm run linter:fix && react-app-rewired start",
     "build": "react-app-rewired build",
     "test": "react-app-rewired test",
