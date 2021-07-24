@@ -33,6 +33,7 @@ export default function Home() {
   const ref = useRef()
   const titleRef = useRef()
   const subtitleRef = useRef()
+  const [subtitleHover, setSubtitleHover] = useState(false)
   const [uTexture, uTexture2, uTextureDisplacement] = useLoader(
     THREE.TextureLoader,
     ['./1.jpeg', './2.jpeg', './displacement/4.png']
@@ -66,7 +67,16 @@ export default function Home() {
         text={`Click here for switching experience`}
         ref={subtitleRef}
         {...propsText}
+        color={subtitleHover ? '#FF0000' : '#99ccff'}
         onClick={() => setSelection((c) => c + 1)}
+        onPointerEnter={() => {
+          setSubtitleHover(true)
+          document.documentElement.style.cursor = 'pointer'
+        }}
+        onPointerLeave={() => {
+          setSubtitleHover(false)
+          document.documentElement.style.cursor = 'initial'
+        }}
       >
         <meshPhongMaterial />
       </text>
