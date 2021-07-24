@@ -41,6 +41,13 @@ const Selector = forwardRef(
         {selection % total === 6 && (
           <maskMaterial ref={ref} uTexture={uTexture} />
         )}
+        {selection % total === 7 && (
+          <maskNewImageMaterial
+            ref={ref}
+            uTexture={uTexture}
+            uTexture2={uTexture2}
+          />
+        )}
       </>
     )
   }

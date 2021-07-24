@@ -5,6 +5,7 @@ import displacementMaterial from '@components/Materials/Displacement'
 import rippleMaterial from '@components/Materials/Ripple'
 import perlinNoiseMaterial from '@components/Materials/PerlinNoise'
 import maskMaterial from '@components/Materials/Mask'
+import maskNewImageMaterial from '@components/Materials/MaskNewImage'
 
 export {
   smokeMaterial,
@@ -13,5 +14,6 @@ export {
   displacementMaterial,
   rippleMaterial,
   perlinNoiseMaterial,
-  maskMaterial
+  maskMaterial,
+  maskNewImageMaterial
 }
