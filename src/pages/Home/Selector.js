@@ -51,7 +51,7 @@ const Selector = forwardRef(
         {selection % total === 8 && (
           <morphMaterial ref={ref} uTexture={uTexture} uTexture2={uTexture2} />
         )}
-        {selection % total === 0 && (
+        {selection % total === 9 && (
           <burningMaterial
             ref={ref}
             uTexture={uTexture}
