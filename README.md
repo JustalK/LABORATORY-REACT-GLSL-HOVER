@@ -27,8 +27,9 @@ I explain with all the details how I build the project and my way of working.
 - **Experience 6**: Adding a perlin noise on the mesh
 - **Experience 7**: Adding a mask on top of an image
 - **Experience 8**: Adding a new image on the mix of the effect 7
-- **Experience 8**: Adding a difference color effect (Morph)
-- **Experience 9**: Burning transition effect between two image
+- **Experience 9**: Adding a difference color effect (Morph)
+- **Experience 10**: Burning transition effect between two image
+- **Experience 11**: Curl Noise transition effect between two image
 
 ## Documentation
 #### Code documentation

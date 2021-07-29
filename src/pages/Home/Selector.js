@@ -58,6 +58,13 @@ const Selector = forwardRef(
             uTexture2={uTexture2}
           />
         )}
+        {selection % total === 10 && (
+          <curlNoiseMaterial
+            ref={ref}
+            uTexture={uTexture}
+            uTexture2={uTexture2}
+          />
+        )}
       </>
     )
   }
