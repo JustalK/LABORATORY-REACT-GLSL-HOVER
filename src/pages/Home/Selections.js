@@ -8,6 +8,7 @@ import maskMaterial from '@components/Materials/Mask'
 import maskNewImageMaterial from '@components/Materials/MaskNewImage'
 import morphMaterial from '@components/Materials/Morph'
 import burningMaterial from '@components/Materials/Burning'
+import curlNoiseMaterial from '@components/Materials/CurlNoise'
 
 export {
   smokeMaterial,
@@ -19,5 +20,6 @@ export {
   maskMaterial,
   maskNewImageMaterial,
   morphMaterial,
-  burningMaterial
+  burningMaterial,
+  curlNoiseMaterial
 }
