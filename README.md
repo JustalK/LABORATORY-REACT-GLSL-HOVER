@@ -30,6 +30,7 @@ I explain with all the details how I build the project and my way of working.
 - **Experience 9**: Adding a difference color effect (Morph)
 - **Experience 10**: Burning transition effect between two image
 - **Experience 11**: Curl Noise transition effect between two image
+- **Experience 12**: Creating a glitch effect on image
 
 ## Documentation
 #### Code documentation

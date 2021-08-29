@@ -3,6 +3,8 @@
  * @module Home
  */
 import React, { forwardRef } from 'react'
+import { EffectComposer, Glitch } from '@react-three/postprocessing'
+import { GlitchMode } from 'postprocessing'
 import * as Selections from './Selections'
 
 const total = Object.keys(Selections).length
@@ -64,6 +66,21 @@ const Selector = forwardRef(
             uTexture={uTexture}
             uTexture2={uTexture2}
           />
+        )}
+        {selection % total === 11 && (
+          <>
+            <defaultMaterial ref={ref} uTexture={uTexture} />
+            <EffectComposer>
+              <Glitch
+                delay={[0.0, 0.0]} // infinte glitch
+                duration={[0.6, 1.0]}
+                strength={[0.05, 0.05]}
+                mode={GlitchMode.SPORADIC}
+                active
+                ratio={0.25}
+              />
+            </EffectComposer>
+          </>
         )}
       </>
     )
